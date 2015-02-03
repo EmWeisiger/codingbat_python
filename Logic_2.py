@@ -126,3 +126,18 @@ make_chocolate(4, 1, 10) → -1
 make_chocolate(4, 1, 7) → 2
 """
 
+def make_chocolate(small, big, goal):
+   if (big * 5) == goal:
+       return 0
+   elif big * 5 > goal:
+       remaining = goal % 5
+       if remaining <= small:
+           return remaining
+       else:
+           return -1
+   elif big * 5 + small == goal:
+       return small
+   elif big * 5 + small > goal:
+       return (goal - (big * 5))
+   else:
+       return -1
