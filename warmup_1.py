@@ -5,11 +5,9 @@ sleep_in(False, False) → True
 sleep_in(True, False) → False
 sleep_in(False, True) → True
 """
+
 def sleep_in(weekday, vacation):
-	if not weekday or vacation:
-		return True
-	else:
-		return False
+	return(not weekday or vacation)
 
 """
 We have two monkeys, a and b, and the parameters a_smile and b_smile indicate if each is smiling. We are in trouble if they are both smiling or if neither of them is smiling. Return True if we are in trouble. 
@@ -20,12 +18,7 @@ monkey_trouble(True, False) → False
 """
 
 def monkey_trouble(a_smile, b_smile):
-	if not a_smile and not b_smile:
-		return True
-	if a_smile and b_smile:
-		return True
-	else:
-		return False
+  return((not a_smile and not b_smile) or (a_smile and b_smile)) 
 
 """
 Given two int values, return their sum. Unless the two values are the same, then return double their sum. 
@@ -36,10 +29,10 @@ sum_double(2, 2) → 8
 """
 
 def sum_double(a, b):
-	sum = a + b
-	if a == b:
-		sum = sum * 2
-	return sum
+  sum = a + b
+  if a == b:
+    return sum * 2
+  return sum
 
 """
 Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21. 
@@ -50,10 +43,9 @@ diff21(21) → 0
 """
 
 def diff21(n):
-	if n <= 21:
-		return 21 - n
-	else:
-		return (n - 21) * 2
+  if abs(n) > 21:
+    return abs(n - 21) * 2
+  return abs(n - 21)
 
 """
 We have a loud talking parrot. The "hour" parameter is the current hour time in the range 0..23. We are in trouble if the parrot is talking and the hour is before 7 or after 20. Return True if we are in trouble. 
@@ -75,13 +67,7 @@ makes10(1, 9) → True
 """
 
 def makes10(a, b):
-	sum = (a + b)
-	if ((a == 10) or (b == 10)):
-		return True
-	if sum == 10:
-		return True
-	else:
-		return False
+  return((a == 10 or b == 10) or (a + b == 10))
 
 """
 Given an int n, return True if it is within 10 of 100 or 200. Note: abs(num) computes the absolute value of a number. 
