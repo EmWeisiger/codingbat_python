@@ -78,11 +78,10 @@ xyz_there('abc.xyz') → False
 xyz_there('xyz.abc') → True
 """
 
-def xyz_there(self, str):
-  if "xyz" and ".xyz" in str:
-    return False
-  elif "xyz" in str:
-    return True
-  else:
-    return False
-    
+def xyz_there(str):
+  i=0
+  while "xyz" in str[i:]:
+    if str[i-1+str[i:].index("xyz")] != ".":
+      return True
+    i += str[i:].index("xyz")+2
+  return False
