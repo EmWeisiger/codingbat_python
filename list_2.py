@@ -59,3 +59,30 @@ sum67([1, 2, 2, 6, 99, 99, 7]) → 5
 sum67([1, 1, 6, 7, 2]) → 4
 """
 
+def sum67(nums):
+  count = 0
+  blocked = False
+  for n in nums:
+    if n == 6:
+      blocked = True
+      continue
+    if n == 7 and blocked:
+      blocked = False
+      continue
+    if not blocked:  
+      count += n
+  return count
+
+"""
+Given an array of ints, return True if the array contains a 2 next to a 2 somewhere. 
+
+has22([1, 2, 2]) → True
+has22([1, 2, 1, 2]) → False
+has22([2, 1, 2]) → False
+"""
+
+def has22(nums):
+  for i,v in enumerate(nums[:-1]):
+    if v == 2 and nums[i+1] == 2:
+      return True
+  return False
