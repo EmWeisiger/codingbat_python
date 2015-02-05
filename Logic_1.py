@@ -7,18 +7,6 @@ cigar_party(70, True) → True
 """
 
 def cigar_party(cigars, is_weekend):
-  if cigars <= 60 and cigars >= 40:
-    return True
-  if is_weekend and cigars > 60:
-    return True
-  else:
-    return False
-    
-"""
-ALTERNATE SOLUTION
-"""
-
-def cigar_party(cigars, is_weekend):
   if is_weekend:
     return (cigars >= 40)
   else:
@@ -83,16 +71,6 @@ def sorta_sum(a, b):
   else:
     return sum
     
-"""
-ALTERNATE SOLUTION
-"""
-
-def sorta_sum(a, b):
-  sum = a + b
-  if sum >= 10 and sum <= 19:
-    return 20
-  return sum
-
 """
 Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, ...6=Sat, and a boolean indicating if we are on vacation, return a string of the form "7:00" indicating when the alarm clock should ring. Weekdays, the alarm should be "7:00" and on the weekend it should be "10:00". Unless we are on vacation -- then on weekdays it should be "10:00" and weekends it should be "off". 
 
