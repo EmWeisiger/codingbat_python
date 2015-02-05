@@ -43,3 +43,46 @@ cat_dog('1cat1cadodog') → True
 
 def cat_dog(str):
   return (str.count('cat') == str.count('dog'))
+
+"""
+Return the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count. 
+
+count_code('aaacodebbb') → 1
+count_code('codexxcode') → 2
+count_code('cozexxcope') → 2
+"""
+
+def count_code(str):
+  count = 0
+  for i in range(0,len(str)-3):
+    if str[i:i+2] == 'co' and str[i+3:i+4] == 'e':
+      count +=1
+  return count
+  
+"""
+Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). Note: s.lower() returns the lowercase version of a string. 
+
+end_other('Hiabc', 'abc') → True
+end_other('AbC', 'HiaBc') → True
+end_other('abc', 'abXabc') → True
+"""
+
+def end_other(a, b):
+  return a.lower()[-len(b):] == b.lower()[-len(a):]
+  
+"""
+Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not. 
+
+xyz_there('abcxyz') → True
+xyz_there('abc.xyz') → False
+xyz_there('xyz.abc') → True
+"""
+
+def xyz_there(self, str):
+  if "xyz" and ".xyz" in str:
+    return False
+  elif "xyz" in str:
+    return True
+  else:
+    return False
+    
