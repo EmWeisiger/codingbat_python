@@ -95,17 +95,6 @@ max_end3([2, 11, 3]) → [3, 3, 3]
 
 def max_end3(nums):
   return [nums[0]]*3 if nums[0] >= nums[-1] else [nums[-1]]*3
-  
-"""
-ALTERNATE SOLUTION
-"""
-
-def max_end3(nums):
-  big = max(nums[0], nums[2])
-  nums[0] = big
-  nums[1] = big
-  nums[2] = big
-  return nums
 
 """
 Given an array of ints, return the sum of the first 2 elements in the array. If the array length is less than 2, just sum up the elements that exist, returning 0 if the array is length 0. 
