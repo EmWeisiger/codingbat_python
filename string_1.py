@@ -54,14 +54,6 @@ def extra_end(str):
   return str[-2:]*3
 
 """
-ALTERNATE SOLUTION
-"""
-
-def extra_end(str):
-  end = str[-2:]
-  return end + end + end
-
-"""
 Given a string, return the string made of its first two chars, so the String "Hello" yields "He". If the string is shorter than length 2, return whatever there is, so "X" yields "X", and the empty string "" yields the empty string "". 
 
 first_two('Hello') → 'He'
@@ -74,16 +66,6 @@ def first_two(str):
     return str
   else:
     return str[:2]
-
-"""
-ALTERNATE SOLUTION
-"""
-
-def first_two(str):
-  if len(str) >= 2:
-    return str[:2]
-  else:
-    return str
 
 """
 Given a string of even length, return the first half. So the string "WooHoo" yields "Woo". 
